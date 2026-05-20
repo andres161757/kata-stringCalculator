@@ -63,4 +63,13 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("1\n2,3");
         $this->assertEquals(6, $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenTwoNumberWithDelimitadorReturnsLastNumbers()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("//;\n1;2");
+        $this->assertEquals(2, $resultado);
+    }
 }
