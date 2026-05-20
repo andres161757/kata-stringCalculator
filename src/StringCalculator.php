@@ -18,7 +18,11 @@ class StringCalculator
 
             $numeros = explode($delimitador, $valores[1]);
 
-            return (int) $numeros[0] + (int) $numeros[1];
+            $suma = 0;
+            for ($i = 0; $i < count($numeros); $i++) {
+                $suma += (int) $numeros[$i];
+            }
+            return $suma;
         }
         if(str_contains($numbers, "\n")) {
             $numbers = str_replace("\n", ',', $numbers);
