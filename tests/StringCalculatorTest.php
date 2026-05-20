@@ -12,7 +12,7 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function GivenEmptyStringReturn0()
+    public function GivenEmptyStringReturns0()
     {
         $calculator = new StringCalculator();
         $resultado = $calculator->add("");
@@ -22,7 +22,7 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function GivenNumberOneReturnNumberOne()
+    public function GivenNumberOneReturnsNumberOne()
     {
         $calculator = new StringCalculator();
         $resultado = $calculator->add("1");
