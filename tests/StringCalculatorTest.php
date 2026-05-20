@@ -54,4 +54,13 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("1,2,3");
         $this->assertEquals(6, $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenTwoNumberAndArguementWithSaltoReturnsSumOfNumbers()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("1\n2");
+        $this->assertEquals(3, $resultado);
+    }
 }
