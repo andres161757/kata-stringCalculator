@@ -18,7 +18,7 @@ class StringCalculator
 
             $numeros = explode($delimitador, $valores[1]);
 
-            return (int) $numeros[1];
+            return (int) $numeros[0] + (int) $numeros[1];
         }
         if(str_contains($numbers, "\n")) {
             $numbers = str_replace("\n", ',', $numbers);
