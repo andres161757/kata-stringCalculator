@@ -11,8 +11,12 @@ class StringCalculator
         if(!str_contains($numbers, ',')) return (int) $numbers;
 
         $valores = explode(",", $numbers);
+        $suma = 0;
 
+        for ($i = 0; $i < count($valores); $i++) {
+            $suma += (int) $valores[$i];
+        }
 
-        return ;
+        return $suma;
     }
 }
