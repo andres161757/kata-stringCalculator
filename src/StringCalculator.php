@@ -11,6 +11,6 @@ class StringCalculator
         if(!str_contains($numbers, ',')) return (int) $numbers;
 
         $valores = explode(",", $numbers);
-        return (int) $valores[1];
+        return (int) $valores[0] + (int) $valores[1];
     }
 }

@@ -39,15 +39,6 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function GivenTwoNumberReturnsLastNumber()
-    {
-        $calculator = new StringCalculator();
-        $resultado = $calculator->add("1,2");
-        $this->assertEquals(2, $resultado);
-    }
-    /**
-     * @test
-     */
     public function GivenTwoNumberReturnsSumOfNumbers()
     {
         $calculator = new StringCalculator();
