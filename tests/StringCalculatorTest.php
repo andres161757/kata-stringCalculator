@@ -21,7 +21,7 @@ final class StringCalculatorTest extends TestCase
     /**
      * @test
      */
-    public function GivenAnyNumberReturnsThatNumber()
+    public function GivenAnySingleNumberReturnsThatNumber()
     {
         $calculator = new StringCalculator();
         $resultado = $calculator->add("3");
