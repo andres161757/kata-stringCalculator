@@ -28,4 +28,14 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("3");
         $this->assertEquals(3, $resultado);
     }
+
+    /**
+     * @test
+     */
+    public function GivenInvalidArgumentReturnsZero()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("arbol");
+        $this->assertEquals(0, $resultado);
+    }
 }
