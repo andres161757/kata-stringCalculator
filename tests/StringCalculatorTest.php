@@ -18,7 +18,6 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("");
         $this->assertEquals(0, $resultado);
     }
-
     /**
      * @test
      */
@@ -28,7 +27,6 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("3");
         $this->assertEquals(3, $resultado);
     }
-
     /**
      * @test
      */
@@ -37,5 +35,14 @@ final class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $resultado = $calculator->add("arbol");
         $this->assertEquals(0, $resultado);
+    }
+    /**
+     * @test
+     */
+    public function GivenTwoNumberReturnsLastNumber()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("1,2");
+        $this->assertEquals(2, $resultado);
     }
 }
