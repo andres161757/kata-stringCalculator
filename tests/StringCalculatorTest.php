@@ -45,4 +45,13 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("1,2");
         $this->assertEquals(3, $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenAnyAmountOfNumberReturnsSumOfNumbers()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("1,2,3");
+        $this->assertEquals(6, $resultado);
+    }
 }
