@@ -24,7 +24,7 @@ class StringCalculator
             $suma = 0;
             for ($i = 0; $i < count($numeros); $i++) {
                 if (str_contains($numeros[$i], '-')) $negativos[] = $numeros[$i];
-                else $suma += (int) $numeros[$i];
+                $suma += (int) $numeros[$i];
             }
             if (empty($negativos)) return $suma;
             else {

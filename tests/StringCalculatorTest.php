@@ -99,4 +99,13 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("//;\n-1;2;-3");
         $this->assertEquals("negativos no soportados -1, -3", $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenNumberHigher1000ReturnSumIgnoreNumber()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("//;\n10000;2;1");
+        $this->assertEquals(3, $resultado);
+    }
 }
