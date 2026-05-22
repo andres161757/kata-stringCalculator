@@ -108,4 +108,13 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("//;\n10000;2;1");
         $this->assertEquals(3, $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenNDelimitadorReturnSum()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("//[***]\n1***2***3");
+        $this->assertEquals(6, $resultado);
+    }
 }
