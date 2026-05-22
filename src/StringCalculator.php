@@ -49,7 +49,6 @@ class StringCalculator
                 return "negativos no soportados " . $negativos[$i];
             }
         }
-
         return $suma;
     }
 }
