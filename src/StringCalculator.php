@@ -18,6 +18,8 @@ class StringCalculator
             $valores = explode("\n", $numbers);
 
             $delimitador = $valores[0];
+            if (str_contains($delimitador, '[')) $delimitador = str_replace('[', '', $delimitador);
+            if (str_contains($delimitador, ']')) $delimitador = str_replace(']', '', $delimitador);
 
             $numeros = explode($delimitador, $valores[1]);
 
