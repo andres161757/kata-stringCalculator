@@ -9,6 +9,7 @@ class StringCalculator
         if(!($numbers)) return 0;
 
         $negativos = [];
+        $resultadoNegativos = "";
 
         if(!str_contains($numbers, ',') && !str_contains($numbers, "\n") && !str_contains($numbers, "//")) return (int) $numbers;
         if(str_contains($numbers, '//')){
@@ -28,13 +29,15 @@ class StringCalculator
             if (empty($negativos)) return $suma;
             else {
                 for ($i = 0; $i < count($negativos); $i++) {
-                    return "negativos no soportados " . $negativos[$i];
+                    $resultadoNegativos .=  $negativos[$i];
+                    if ($i != count($negativos) - 1) {
+                        $resultadoNegativos .=  ', ';
+                    }
                 }
+                return "negativos no soportados " . $resultadoNegativos;
             }
         }
-        if(str_contains($numbers, "\n")) {
-            $numbers = str_replace("\n", ',', $numbers);
-        };
+        if(str_contains($numbers, "\n")) $numbers = str_replace("\n", ',', $numbers);
 
         $valores = explode(',', $numbers);
         $suma = 0;
