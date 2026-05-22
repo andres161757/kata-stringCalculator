@@ -72,4 +72,14 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("//;\n1;2");
         $this->assertEquals(3, $resultado);
     }
+    /**
+     * @test
+     */
+    public function GivenNegativeNumberReturnsErrorAndNumber()
+    {
+        $calculator = new StringCalculator();
+        $resultado = $calculator->add("//;\n-1;2");
+        $this->assertEquals("negativos no soportados -1", $resultado);
+    }
+
 }
