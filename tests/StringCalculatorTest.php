@@ -81,5 +81,4 @@ final class StringCalculatorTest extends TestCase
         $resultado = $calculator->add("//;\n-1;2");
         $this->assertEquals("negativos no soportados -1", $resultado);
     }
-
 }

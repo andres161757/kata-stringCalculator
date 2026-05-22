@@ -4,9 +4,11 @@ namespace Deg540\StringCalculatorPHP;
 
 class StringCalculator
 {
-    public function add(string $numbers): int
+    public function add(string $numbers): int | String
     {
         if(!($numbers)) return 0;
+
+        $negativos = [];
 
         if(!str_contains($numbers, ',') && !str_contains($numbers, "\n") && !str_contains($numbers, "//")) return (int) $numbers;
         if(str_contains($numbers, '//')){
@@ -20,9 +22,15 @@ class StringCalculator
 
             $suma = 0;
             for ($i = 0; $i < count($numeros); $i++) {
-                $suma += (int) $numeros[$i];
+                if (str_contains($numeros[$i], '-')) $negativos[] = $numeros[$i];
+                else $suma += (int) $numeros[$i];
             }
-            return $suma;
+            if (empty($negativos)) return $suma;
+            else {
+                for ($i = 0; $i < count($negativos); $i++) {
+                    return "negativos no soportados " . $negativos[$i];
+                }
+            }
         }
         if(str_contains($numbers, "\n")) {
             $numbers = str_replace("\n", ',', $numbers);
@@ -32,7 +40,14 @@ class StringCalculator
         $suma = 0;
 
         for ($i = 0; $i < count($valores); $i++) {
+            if (str_contains($valores[$i], '-')) $negativos[] = $valores[$i];
             $suma += (int) $valores[$i];
+        }
+
+        if (!empty($negativos)) {
+            for ($i = 0; $i < count($negativos); $i++) {
+                return "negativos no soportados " . $negativos[$i];
+            }
         }
 
         return $suma;
